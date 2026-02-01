@@ -1,0 +1,113 @@
+NOTES 03  EARLY WARNING RISK SIGNALS
+
+Goal of this stage:
+The aim is not to predict price, but to detect rising market stress
+before drawdowns deepen into full crashes.
+
+This notebook focuses on simple, interpretable signals.
+
+--------------------------------------------------
+WHY WE NEED RISK SIGNALS
+--------------------------------------------------
+Drawdowns tell us a crash has already happened or is happening.
+Risk signals help us understand whether stress is building BEFORE that.
+
+Think of this as:
+- Drawdown = damage already done
+- Risk signals = warning signs
+
+--------------------------------------------------
+SIGNAL 1 — VOLUME SPIKES
+--------------------------------------------------
+Idea:
+Volume shows how emotional and urgent market participants are.
+
+Why it matters before crashes:
+- Panic selling increases volume
+- Large players exit positions quietly
+- Distribution happens before price collapses
+
+Key insight:
+Price can move without conviction, but high volume means strong intent.
+
+Implementation:
+Volume ratio = current volume / 30-day average volume
+
+Interpretation:
+- Volume ratio ~1 → normal market
+- Sustained volume spikes → stress building
+
+--------------------------------------------------
+SIGNAL 2 — VOLATILITY EXPANSION
+--------------------------------------------------
+Idea:
+Volatility measures how unstable price movements are.
+
+Market behavior:
+- Calm markets have low volatility
+- Stressed markets have high volatility
+
+Why it signals regime change:
+- Rising volatility means confidence is breaking
+- Market participants disagree on value
+- Transitions from stable to chaotic behavior
+
+Key insight:
+Volatility expansion often happens before or during crashes.
+
+--------------------------------------------------
+SIGNAL 3 — DRAWDOWN MOMENTUM
+--------------------------------------------------
+Idea:
+Not just how big the loss is, but how fast it is getting worse.
+
+Difference:
+- Drawdown depth = how far price has fallen
+- Drawdown momentum = how quickly losses are accelerating
+
+Why it matters:
+A fast-worsening drawdown indicates loss of control.
+This often precedes deeper crash regimes.
+
+Analogy:
+Depth = how many steps you’ve fallen
+Momentum = how fast you’re falling
+
+--------------------------------------------------
+WHY MULTIPLE WEAK SIGNALS MATTER
+--------------------------------------------------
+No single signal is reliable on its own.
+
+One signal can:
+- Give false alarms
+- React late
+- Be noisy
+
+Multiple signals together:
+- Reduce false positives
+- Capture different dimensions of stress
+- Increase confidence in risk assessment
+
+Analogy:
+Like medical symptoms — one symptom is weak,
+multiple symptoms together indicate real danger.
+
+--------------------------------------------------
+KEY TAKEAWAYS
+--------------------------------------------------
+- Volume captures market emotion and panic
+- Volatility captures uncertainty and instability
+- Drawdown momentum captures acceleration of losses
+- Crashes emerge from combined stress, not one indicator
+
+These signals are descriptive, not predictive.
+They help identify high-risk regimes rather than exact crash timing.
+
+--------------------------------------------------
+NEXT STEP
+--------------------------------------------------
+Combine these individual signals into a single
+composite risk score to quantify overall market stress.
+
+Next notebook:
+04_composite_risk_index.ipynb

@@ -1,0 +1,111 @@
+CRYPTO CRASH EARLY-WARNING SYSTEM  FINAL NOTES
+
+--------------------------------------------------
+ONE-LINE SUMMARY
+--------------------------------------------------
+Built a data-driven framework to objectively detect
+high-risk crypto market regimes using drawdowns and
+a composite risk index derived from volume, volatility,
+and price behavior.
+
+--------------------------------------------------
+CORE IDEA
+--------------------------------------------------
+This project focuses on risk detection, not price prediction.
+Crashes are treated as structural market regimes that emerge
+from accumulated stress rather than sudden single events.
+
+--------------------------------------------------
+DATA FOUNDATION
+--------------------------------------------------
+- Asset: Bitcoin (BTC)
+- Frequency: Daily OHLCV data
+- Source: Exchange data via ccxt
+- Raw data is collected once and saved before analysis
+- Daily timeframe chosen to capture market structure over noise
+
+--------------------------------------------------
+CRASH DEFINITION
+--------------------------------------------------
+Crashes are defined using drawdowns:
+
+Drawdown = (Price - Historical Peak) / Peak
+
+Interpretation:
+- 0        → all-time high
+- ≤ -20%  → stress regime
+- ≤ -30%  → crash regime
+- ≤ -50%  → severe crash
+
+Drawdowns provide an objective, peak-to-trough measure
+of market losses.
+
+--------------------------------------------------
+EARLY-WARNING RISK SIGNALS
+--------------------------------------------------
+Three interpretable signals are used:
+
+1. Volume Stress
+   - Measures abnormal trading activity
+   - Captures panic, urgency, and distribution
+
+2. Volatility Expansion
+   - Measures market instability
+   - Signals transitions from calm to stressed regimes
+
+3. Drawdown Momentum
+   - Measures acceleration of losses
+   - Indicates worsening downside pressure
+
+Each signal captures a different dimension of risk.
+
+--------------------------------------------------
+WHY SIGNALS ARE COMBINED
+--------------------------------------------------
+Single indicators are noisy and unreliable.
+Combining multiple weak signals reduces false alarms
+and improves confidence in identifying high-risk regimes.
+
+--------------------------------------------------
+COMPOSITE RISK INDEX
+--------------------------------------------------
+- Signals are normalized using rolling percentiles
+- All signals scaled between 0 and 1
+- Equal-weighted composite index used
+
+Risk Index Interpretation:
+- < 0.4 → low stress
+- 0.4–0.7 → elevated stress
+- > 0.7 → high-risk regime
+
+--------------------------------------------------
+KEY OBSERVATION
+--------------------------------------------------
+The risk index rises mainly during the later stages of drawdowns.
+This behavior is intentional and reflects a confirmation-based,
+conservative risk management approach.
+
+--------------------------------------------------
+DESIGN PHILOSOPHY
+--------------------------------------------------
+- Reliability over early but noisy warnings
+- Interpretability over model complexity
+- No optimization or machine learning used
+- Focus on regime detection, not timing trades
+
+--------------------------------------------------
+WHAT THIS PROJECT IS NOT
+--------------------------------------------------
+- Not a trading strategy
+- Not a price prediction model
+- Not optimized to historical crashes
+- Not machine-learning driven
+
+--------------------------------------------------
+FINAL TAKEAWAY
+--------------------------------------------------
+Crypto market crashes emerge from the accumulation of stress
+across volume, volatility, and price dynamics.
+Combining simple, interpretable signals into a composite
+risk index provides a robust way to identify high-risk
+market regimes objectively.

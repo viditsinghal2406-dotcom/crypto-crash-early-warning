@@ -1,0 +1,16 @@
+NOTES 01  DATA COLLECTION
+
+- Used ccxt to fetch BTC/USDT daily OHLCV data from Binance
+- Daily timeframe chosen because crashes are structural, not intraday
+- OHLCV = open, high, low, close, volume
+- Converted timestamp to date and set as index
+- Visualized BTC price before doing any analysis
+
+Important:
+- Plotting first helps understand market structure
+- Raw data must be saved before analysis
+- Nothing is saved unless df.to_csv() is used
+
+Confusion I had:
+- Colab vs local files
+- Memory vs disk storage

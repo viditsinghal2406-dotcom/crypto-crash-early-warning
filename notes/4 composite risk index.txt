@@ -1,0 +1,103 @@
+NOTES 04  COMPOSITE RISK INDEX
+
+Purpose of this notebook:
+Combine multiple early-warning risk signals into a single
+composite risk index that reflects overall market stress.
+
+The goal is to summarize market risk, not predict prices.
+
+--------------------------------------------------
+WHY A COMPOSITE INDEX IS NEEDED
+--------------------------------------------------
+Individual signals (volume, volatility, drawdowns) are noisy.
+Each signal captures only one aspect of market behavior.
+
+A composite index:
+- Aggregates different dimensions of risk
+- Reduces reliance on any single indicator
+- Provides a clearer picture of overall stress
+
+--------------------------------------------------
+SIGNALS USED IN THE INDEX
+--------------------------------------------------
+1. Volume Stress
+   - Captures abnormal trading activity
+   - Indicates panic, urgency, or distribution
+
+2. Volatility Expansion
+   - Captures instability and uncertainty
+   - Signals transition from calm to stressed regimes
+
+3. Drawdown Momentum
+   - Captures acceleration of losses
+   - Reflects worsening downside pressure
+
+Each signal represents a different risk dimension.
+
+--------------------------------------------------
+WHY NORMALIZATION IS REQUIRED
+--------------------------------------------------
+Signals have different units and scales:
+- Volume ratio
+- Volatility
+- Drawdown changes
+
+Without normalization:
+- One signal could dominate the index unfairly
+
+Solution used:
+- Rolling percentile normalization
+- Converts all signals to a 0–1 scale
+- Makes signals comparable over time
+
+--------------------------------------------------
+COMPOSITE RISK INDEX DESIGN
+--------------------------------------------------
+- Signals are equally weighted
+- No optimization or tuning performed
+- Emphasis on simplicity and transparency
+
+Formula (conceptually):
+Risk Index = Average of normalized risk signals
+
+This avoids overfitting and keeps the system interpretable.
+
+--------------------------------------------------
+OBSERVED BEHAVIOR
+--------------------------------------------------
+- Risk index rises mainly during later stages of drawdowns
+- Strong alignment with confirmed crash regimes
+- Limited early false alarms
+
+This behavior indicates a conservative,
+confirmation-based risk system.
+
+--------------------------------------------------
+INTERPRETATION OF RISK LEVELS
+--------------------------------------------------
+- Low values → normal market conditions
+- Mid-range values → elevated stress
+- High values → high-risk or crash regime
+
+Sustained high risk values are more important
+than short-lived spikes.
+
+--------------------------------------------------
+DESIGN CHOICE
+--------------------------------------------------
+The index is intentionally conservative.
+It prioritizes reliability over early detection.
+
+Earlier signals are possible by adjusting:
+- Rolling window length
+- Signal weights
+
+These changes were intentionally not applied
+to preserve robustness.
+
+--------------------------------------------------
+KEY TAKEAWAY FROM NOTEBOOK 04
+--------------------------------------------------
+Combining simple, interpretable signals into a composite
+index provides a clearer and more reliable view of
+overall market risk than individual indicators alone.

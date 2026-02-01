@@ -1,0 +1,24 @@
+NOTES 02 CRASH DEFINITION
+
+Key concept:
+- A crash is defined using drawdowns, not daily returns
+
+Drawdown formula:
+(Price - Peak) / Peak
+
+Understanding:
+- Peak is the highest price seen so far (cummax)
+- Drawdowns are always <= 0
+- -0.30 means 30% fall from peak
+
+Thresholds used:
+- Stress: <= -20%
+- Crash: <= -30%
+- Severe Crash: <= -50%
+
+Insights:
+- Crashes are prolonged regimes, not single days
+- Drawdowns cluster during bear markets
+- Regime labeling removes subjectivity
+
+This feels important for interviews.
