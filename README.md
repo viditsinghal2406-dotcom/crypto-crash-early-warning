@@ -2,11 +2,7 @@
 
 
 
-A data-driven framework to identify **high-risk crypto market regimes**
-
-using drawdowns and a composite risk index built from volume, volatility,
-
-and price behavior.
+A data-driven framework to identify **high-risk crypto market regimes** using drawdowns and a composite risk index built from volume, volatility,and price behavior.
 
 
 
