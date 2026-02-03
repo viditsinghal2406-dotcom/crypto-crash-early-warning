@@ -87,15 +87,9 @@ The system is intentionally **conservative and confirmation-based**.
 
 
 
-Crypto crashes emerge from the accumulation of stress across
+Crypto crashes emerge from the accumulation of stress across volume, volatility, and price dynamics.
 
-volume, volatility, and price dynamics.
-
-
-
-Simple, interpretable signals can reliably identify
-
-high-risk market regimes without complex models.
+Simple, interpretable signals can reliably identify high-risk market regimes without complex models.
 
 
 
