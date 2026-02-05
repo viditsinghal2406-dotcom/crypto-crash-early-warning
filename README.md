@@ -1,4 +1,4 @@
-# Crypto Crash Early Warning
+# Crypto Market Risk Regime Detection
 
 
 
